@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-01-概述)
+##### Other languages: [繁體中文](/JB_TW/ENG-01-Overview.tw.md)
 
 # Overview
 

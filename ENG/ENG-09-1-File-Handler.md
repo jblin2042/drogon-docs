@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-09-插件)
+##### Other languages: [繁體中文](/JB_TW/ENG-09-1-File-Handler.tw.md)
 
 # File Handler
 
@@ -6,16 +6,18 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 
 ## `MultiPartParser` Object
 
-  #### Summary:
+#### Summary
 
     It is the object that you will use to extract and temporarily store the request files.
 
 - ### `parse(const std::shared_ptr<HttpRequest> &req)`
 
-  #### Summary:
+  #### Summary
+
     Receives the request object as a parameter, reads and identifies the files (if heard) and transfers it to the MultiPartParser variable.
 
-  #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -32,9 +34,11 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 - ### `getFiles()`
 
   #### Summary
+
   Must be called after `parse()`, returns files of request in the format std::vector&ltHttpFile&gt.
 
-  #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -58,12 +62,15 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 - ### `getParameters()`
 
   #### Summary
+
   Must be called after `parse()`, returns the list of other parts from the MultiPartData form.
 
-  #### Returns:
+  #### Returns
+
   std::unordered_map&ltstd::basic_string&ltchar&gt&gt (key, value)
 
-  #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -87,15 +94,19 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 - ### `getParameter<Typename T>(const std::string &key)`
 
   #### Summary
+
   Must be called after `parse()`, individual version of getParameters().
 
-  #### Inputs:
+  #### Inputs
+
   The type of the expected object (will be converted automatically), the key value of the parameter.
 
-  #### Returns:
+  #### Returns
+
   The content of the parameter corresponding to the key in the informed format, if it does not exist, will return the default value of the T Object.
 
-  #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -118,18 +129,22 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 
 ## `HttpFile` Object
 
-  #### Summary:
+#### Summary
+
   It is the object that represents a file in memory, used by `MultiPartParser`.
 
 - ### `getFileName()`
 
   #### Summary
+
   Self-explanatory name, gets the original name of the file that was received.
 
-  #### Returns:
+  #### Returns
+
   std::string.
 
-    #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -148,12 +163,15 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 - ### `fileLength()`
 
   #### Summary
+
   Gets the file size.
 
-  #### Returns:
+  #### Returns
+
   `size_t`
 
-    #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -172,12 +190,15 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 - ### `getFileExtension()`
 
   #### Summary
+
   Gets the file extension.
 
-  #### Returns:
+  #### Returns
+
   std::string
 
-    #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -196,27 +217,33 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 - ### `getMd5()`
 
   #### Summary
+
   Get MD5 hash of file to check integrity.
 
-  #### Returns:
+  #### Returns
+
   std::string
 
 - ### `save()`
 
   #### Summary
-  Save the file to the file system. The folder saving the file is `UploadPath` configured in config.json (or equivalent). The full path is 
-  ```c++ 
+
+  Save the file to the file system. The folder saving the file is `UploadPath` configured in config.json (or equivalent). The full path is
+
+  ```c++
   drogon::app().getUploadPath()+"/"+this->getFileName()
   ```
-  Or to simplify, it is saved as: UploadPath/filename
 
+  Or to simplify, it is saved as: UploadPath/filename
 
 - ### `save(const std::string &path)`
 
   #### Summary
+
   Version if parameter is not omitted, uses the &path parameter instead of UploadPath.
   
-  #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 
@@ -239,9 +266,11 @@ File parsing is extracting the file (or files) from a multipart-data POST reques
 - ### `saveAs(const std::string &path)`
 
   #### Summary
+
   Writes the file to the path parameter with a new name (ignores the original name).
   
-  #### Example:
+  #### Example
+
   ```c++
     #include "mycontroller.h"
 

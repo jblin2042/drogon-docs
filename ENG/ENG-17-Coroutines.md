@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-17-协程)
+##### Other languages: [繁體中文](/JB_TW/ENG-17-Coroutines.tw.md)
 
 # Coroutines
 
@@ -55,10 +55,10 @@ app.registerHandler("/num_users",
 
 Notice a few important points:
 
-1.  Any handler that calls a coroutine MUST return a _resumable_
+1. Any handler that calls a coroutine MUST return a _resumable_
     - Turning the handler itself into a coroutine
-2.  `co_return` replaces `return` in a coroutine
-3.  Most parameters are passed by value
+2. `co_return` replaces `return` in a coroutine
+3. Most parameters are passed by value
 
 A _resumable_ is an object following the coroutine standard. Don't worry too much about the details. Just know that if you want the coroutine to yield something typed `T`, then the return type will be `Task<T>`.
 

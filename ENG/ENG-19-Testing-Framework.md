@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-19-测试框架)
+##### Other languages: [繁體中文](/JB_TW/ENG-19-Testing-Framework.tw.md)
 
 ## Testing Framework
 

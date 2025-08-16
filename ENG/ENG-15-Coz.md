@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-15-Coz分析)
+##### Other languages: [繁體中文](/JB_TW/ENG-15-Coz.tw.md)
 
 ## Causal profiling with Coz
 

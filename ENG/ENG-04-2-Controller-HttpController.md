@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-04-2-控制器-HttpController)
+##### Other languages: [繁體中文](/JB_TW/ENG-04-2-Controller-HttpController.tw.md)
 
 # Controller - HttpController
 
@@ -144,7 +144,7 @@ Each `HttpController` class can define many Http request handlers. Since the num
 
 - #### Path Mapping
 
-  The mapping from the URL path to the handler is done by macros. You can add a multipath map with the `METHOD_ADD `macro or the `ADD_METHOD_TO` macro. All `METHOD_ADD` and `ADD_METHOD_TO` statements should be sandwiched between the `METHOD_LIST_BEGIN` and `METHOD_LIST_END` macro statements.
+  The mapping from the URL path to the handler is done by macros. You can add a multipath map with the `METHOD_ADD`macro or the `ADD_METHOD_TO` macro. All `METHOD_ADD` and `ADD_METHOD_TO` statements should be sandwiched between the `METHOD_LIST_BEGIN` and `METHOD_LIST_END` macro statements.
 
   The `METHOD_ADD` macro automatically prefixes the namespace and class name in the path map. Therefore, in this example, the login function is registered to the `/demo/v1/user/token` path, and the getInfo function is registered to the `/demo/v1/user/xxx/info` path. Constraints are similar to the `PATH_ADD` macro of HttpSimpleController and are not described here.
 

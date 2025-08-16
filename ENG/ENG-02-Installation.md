@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-02-安装)
+##### Other languages: [繁體中文](/JB_TW/ENG-02-Installation.tw.md)
 
 # Installation
 
@@ -194,12 +194,13 @@ This section takes Ubuntu 24.04, CentOS 7.5, MacOS 12.2 as an example to introdu
   * Windows 10 SDK
   * C++ CMake tools for windows
   * Test adaptor for Google Test
-      
-`conan` package manager could provide all dependencies that Drogon projector needs。If python is installed on system, you could install `conan` package manager via pip. 
+
+`conan` package manager could provide all dependencies that Drogon projector needs。If python is installed on system, you could install `conan` package manager via pip.
 
 ```
 pip install conan
 ```
+
 > of course you can download the installation file from `conan` [official website](https://conan.io/) to install it also.
 
 Create`conanfile.txt`and add the following content to it:
@@ -269,6 +270,7 @@ Create`conanfile.txt`and add the following content to it:
   * `Windows conanfile`: `sqlite3/3.36.0`
 
 * #### Redis
+
   * `ubuntu`: `sudo apt-get install libhiredis-dev`
   * `ubuntu`: `sudo pacman -S redis`
   * `centOS`: `yum install hiredis-devel`
@@ -313,6 +315,7 @@ Assuming that the above environment and library dependencies are all ready, the 
   1. Download drogon source
 
       Open the Windows taskbar search box, search for ​x64 Native Tools, and select ​x64 Native Tools Command Prompt for VS 2019​ as your command-line tool.
+
       ```dos
       cd $WORK_PATH
       git clone https://github.com/drogonframework/drogon
@@ -334,6 +337,7 @@ Assuming that the above environment and library dependencies are all ready, the 
       > Modify `conanfile.txt` to change the version of dependencies.
 
   3. Compile and install
+
       ```dos
       cmake ..  -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE="conan_toolchain.cmake" -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_INSTALL_PREFIX="D:"
       cmake --build . --parallel --target install
@@ -350,15 +354,19 @@ Assuming that the above environment and library dependencies are all ready, the 
   * The trantor library file trantor.dll is installed into `D:/lib`;
 
   Add `bin` and `cmake` directory to `path`：
+
   ```
   D:\bin
   ```
+
   ```
   D:\lib\cmake\Drogon
   ```
+
   ```
   D:\lib\cmake\Trantor
   ```
+
 * #### Install by vcpkg in Windows
   
   [Lazzy to read](https://www.youtube.com/watch?v=0ojHvu0Is6A)
@@ -431,6 +439,7 @@ Assuming that the above environment and library dependencies are all ready, the 
      to your windows **_environment variables_**. Then restart/re-open your **_powershell_**.
 
   3. reload/re-open your **_powershell_**, then type: `drogon_ctl` or `drogon_ctl.exe` if:
+
      ```
      usage: drogon_ctl [-v | --version] [-h | --help] <command> [<args>]
      commands list:
@@ -439,6 +448,7 @@ Assuming that the above environment and library dependencies are all ready, the 
      press                   Do stress testing(Use 'drogon_ctl help press' for more information)
      version                 display version of this tool
      ```
+
      showed up, you are good to go.
 
   > Note:

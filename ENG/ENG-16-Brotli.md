@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-16-Brotli压缩)
+##### Other languages: [繁體中文](/JB_TW/ENG-16-Brotli.tw.md)
 
 ## Brotli Info
 

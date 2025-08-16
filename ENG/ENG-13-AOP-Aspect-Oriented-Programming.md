@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-13-AOP面向切面编程)
+##### Other languages: [繁體中文](/JB_TW/ENG-13-AOP-Aspect-Oriented-Programming.tw.md)
 
 ## Aspect Oriented Programming
 
@@ -30,6 +30,6 @@ Drogon provides seven joinpoints for users. When the application runs to the joi
 
 The following figure shows the location of the above four joinpoints in the HTTP Requests processing flow, where the red dots represent the joinpoints and the green arrows represent the asynchronous calls.
 
-![](images/AOP.png)
+![AOP](/images/AOP.png)
 
 # Next: [Benchmarks](/ENG/ENG-14-Benchmarks)

@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-08-3-数据库-ORM)
+##### Other languages: [繁體中文](/JB_TW/ENG-08-3-Database-ORM.tw.md)
 
 # Database - ORM
 
@@ -32,7 +32,7 @@ The last parameter is the path to store model classes. There must be a configura
 }
 ```
 
-The configured parameters are the same as the application's configuration file. Please refer to [Configuration File](/ENG//ENG/ENG-10-Configuration-File#db_clients).
+The configured parameters are the same as the application's configuration file. Please refer to [Configuration File](/ENG/ENG-11-Configuration-File.md#db_clients).
 
 The `tables` configuration option is unique to the model configuration. It is an array of strings. Each string represents the name of the table to be converted into a model class. If this option is empty, all tables will be used to generate model classes.
 
@@ -63,9 +63,9 @@ The construction of the Mapper object is very simple. The template parameter is 
 
 Like DbClient, Mapper also provides asynchronous and synchronous interfaces. The synchronous interface is blocked and may throw an exception. The returned future object is blocked in get() and may throw an exception. The normal asynchronous interface does not throw an exception, but returns the result through two callbacks (result callback and exception callback). The type of the exception callback is the same as that in the DbClient interface. The result callback is also divided into several categories according to the interface function. The list is as follows (T is the template parameter, which is the type of the model):
 
-![](images/mapper_method1_en.png)
-![](images/mapper_method2_en.png)
-![](images/mapper_method3_en.png)
+![Mapper method 1 interface](/images/mapper_method1_en.png)
+![Mapper method 2 interface](/images/mapper_method2_en.png)
+![Mapper method 3 interface](/images/mapper_method3_en.png)
 
 > **Note: When using a transaction, the exception does not necessarily cause a rollback. Transactions will not be rolled back in the following cases: When the findByPrimaryKey interface does not find a qualified row, when the findOne interface finds fewer or more than one record, the mapper will throw an exception or enter an exception callback, the exception type is UnexpectedRows. If the business logic needs to be rolled back in this condition, please explicitly call the rollback() interface.**
 
@@ -101,7 +101,7 @@ template <typename... Arguments>
 explicit Criteria(const CustomSql &sql, Arguments &&...args)
 ```
 
-The first argument is a `CustomSql` object of sql statements with `$?` placeholders, while the `CustomSql` class is just a wrapper of a std::string. The second indefinite argument is a parameter pack represents the bound parameter, which behaves just like the ones in [execSqlAsync](/ENG//ENG/ENG-08-1-Database-DbClient.md#execSqlAsync).
+The first argument is a `CustomSql` object of sql statements with `$?` placeholders, while the `CustomSql` class is just a wrapper of a std::string. The second indefinite argument is a parameter pack represents the bound parameter, which behaves just like the ones in [execSqlAsync](/ENG/ENG-08-1-Database-DbClient.md#execSqlAsync).
 
 E.g:
 

@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-09-插件)
+##### Other languages: [繁體中文](/JB_TW/ENG-09-0-References-request.tw.md)
 
 # References Request
 
@@ -6,27 +6,34 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
 
 - ### `isOnSecureConnection()`
 
-  #### Summary:
+  #### Summary
+
   Function that returns if the request was made on https.
 
-  #### Inputs:
+  #### Inputs
+
   None.
 
-  #### Returns:
+  #### Returns
+
   bool type.
 
 - ### `getMethod()`
 
-  #### Summary:
+  #### Summary
+
   Function that returns the request method. Useful to differentiate the request method if a single handle allows more than one type.
 
-  #### Inputs:
+  #### Inputs
+
   None.
 
-  #### Returns:
+  #### Returns
+
     `HttpMethod` request method object.
 
-  #### Examples:
+  #### Examples
+
   ```c++
   #include "mycontroller.h"
 
@@ -43,17 +50,22 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
 
 - ### `getParameter(const std::string &key)`
 
-  #### Summary:
+  #### Summary
+
   Function that returns the value of a parameter based on an identifier. The behavior changes based on the Get or Post request type.
 
-  #### Inputs:
+  #### Inputs
+
   string type identifier of param.
 
-  #### Returns:
+  #### Returns
+
   param content on `string` format.
 
-  #### Examples:
+  #### Examples
+
   On Get type:
+
   ```c++
   #include "mycontroller.h"
   #include <string>
@@ -67,8 +79,10 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
       long id = std::strtol(req->getParameter("id"));
   }
   ```
+
   Or
   On Post type:
+
   ```c++
   #include "mycontroller.h"
   #include <string>
@@ -85,19 +99,24 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
 
 - ### `getPath()`
 
-  #### Similar:
+  #### Similar
+
   path()
 
-  #### Summary:
-  Function that returns the request path. Useful if you use an ADD_METHOD_VIA_REGEX or other type of dynamic URL in the [controller](/ENG//ENG/ENG-04-2-Controller-HttpController).
+  #### Summary
 
-  #### Inputs:
+  Function that returns the request path. Useful if you use an ADD_METHOD_VIA_REGEX or other type of dynamic URL in the [controller](/ENG/ENG-04-2-Controller-HttpController).
+
+  #### Inputs
+
   None.
 
-  #### Returns:
+  #### Returns
+
   string representing the request path.
 
-  #### Examples:
+  #### Examples
+
   ```c++
   #include "mycontroller.h"
   #include <string>
@@ -114,30 +133,38 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
 
 - ### `getBody()`
 
-  #### Similar:
+  #### Similar
+
   body()
 
-  #### Summary:
+  #### Summary
+
   Function that returns the request body content (if any).
 
-  #### Inputs:
+  #### Inputs
+
   None.
 
-  #### Returns:
+  #### Returns
+
   String representing the request body (if any).
 
 - ### getHeader(std::string key)
 
-  #### Summary:
+  #### Summary
+
   Function that returns a request header based on an identifier.
 
-  #### Inputs:
+  #### Inputs
+
   String header identifier.
 
-  #### Returns:
-  The content of the header in string format. 
+  #### Returns
 
-  #### Examples:
+  The content of the header in string format.
+
+  #### Examples
+
   ```c++
   #include "mycontroller.h"
   #include <string>
@@ -153,16 +180,20 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
 
 - ### `headers()`
 
-  #### Summary:
+  #### Summary
+
   Function that returns all headers of a request.
 
-  #### Inputs:
+  #### Inputs
+
   None.
 
-  #### Returns:
-  An unordered_map containing the headers. 
+  #### Returns
 
-  #### Examples:
+  An unordered_map containing the headers.
+
+  #### Examples
+
   ```c++
   #include "mycontroller.h"
   #include <unordered_map>
@@ -180,27 +211,34 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
 
 - ### `getCookie()`
 
-  #### Summary:
+  #### Summary
+
   Function that returns request cookie based on an identifier.
 
-  #### Inputs:
+  #### Inputs
+
   None.
 
-  #### Returns:
+  #### Returns
+
   Value of cookie on string format.
 
 - ### `cookies()`
 
-  #### Summary:
+  #### Summary
+
   Function that returns all cookies of a request.
 
-  #### Inputs:
+  #### Inputs
+
   None.
 
-  #### Returns:
-  An unordered_map containing the cookies. 
+  #### Returns
 
-  #### Examples:
+  An unordered_map containing the cookies.
+
+  #### Examples
+
   ```c++
   #include "mycontroller.h"
   #include <unordered_map>
@@ -218,16 +256,20 @@ The HttpRequest type pointer commonly named `req` in the examples in this docume
 
 - ### `getJsonObject()`
 
-  #### Summary:
+  #### Summary
+
   Function that converts the body value of a request into a Json object (normally POST requests).
 
-  #### Inputs:
+  #### Inputs
+
   None.
 
-  #### Returns:
-  A Json object. 
+  #### Returns
 
-  #### Examples:
+  A Json object.
+
+  #### Examples
+
   ```c++
   #include "mycontroller.h"
 
@@ -267,6 +309,7 @@ void mycontroller::postfile(const HttpRequestPtr &req, std::function<void (const
     archive.saveAs("/tmp/" + archive.getFileName());
   }
 ```
-For more information about parsing file: [File Handler](/ENG//ENG/ENG-09-1-File-Handler)
+
+For more information about parsing file: [File Handler](/ENG/ENG-09-1-File-Handler)
 
 # Next: [File Handler](/ENG/ENG-09-1-File-Handler)

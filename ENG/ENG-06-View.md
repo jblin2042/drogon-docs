@@ -1,4 +1,4 @@
-##### Other languages: [简体中文](/CHN/CHN-06-视图)
+##### Other languages: [繁體中文](/JB_TW/ENG-06-View.tw.md)
 
 # View
 
@@ -104,7 +104,7 @@ After the operation is finished, two source files, ListParameters.h and ListPara
 
 Recompile the entire project with CMake, run the target program webapp, you can test the effect in the browser, enter `http://localhost/list_para?p1=a&p2=b&p3=c` in the address bar, you can see the following page :
 
-![view page](images/viewdemo.png)
+![view page](/images/viewdemo.png)
 
 The html page rendered by the backend is simply added.
 
